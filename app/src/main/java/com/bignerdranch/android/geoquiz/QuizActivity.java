@@ -1,0 +1,63 @@
+package com.bignerdranch.android.geoquiz;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class QuizActivity extends AppCompatActivity {
+    private Button mTrueButton;
+    private Button mFalseButton;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_quiz);
+        /*
+        Button mOptionOneButton = findViewById(R.id.answer_one);
+        mOptionOneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button mOptionTwoButton = findViewById(R.id.answer_two);
+        mOptionTwoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button mOptionThreeButton = findViewById(R.id.answer_three);
+        mOptionThreeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(QuizActivity.this, R.string.correct_toast, Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button mOptionFourButton = findViewById(R.id.answer_four);
+        mOptionFourButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
+            }
+        });
+    */
+        mTrueButton = findViewById(R.id.true_button);
+        mTrueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(QuizActivity.this, R.string.correct_toast, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        mFalseButton = findViewById(R.id.false_button);
+        mFalseButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+}
