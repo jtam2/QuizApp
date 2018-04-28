@@ -4,14 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
     private Button mTrueButton;
     private Button mFalseButton;
-    private Button mNextButton;
-    private Button mBackButton;
+    private ImageButton mNextButton;
+    private ImageButton mBackButton;
     private TextView mQuestionTextView;
     private Question[] mQuestionBank = new Question[]{
             new Question(R.string.question_australia, true),
@@ -36,7 +37,6 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 mCurrentIndex = (mCurrentIndex+1)% mQuestionBank.length;
-
                 updateQuestion();
 
             }
@@ -47,7 +47,11 @@ public class QuizActivity extends AppCompatActivity {
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentIndex = (mCurrentIndex-1)%mQuestionBank.length;
+                if(mCurrentIndex != 0) {
+                    mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+                } else {
+                    mCurrentIndex = mQuestionBank.length-1;
+                }
                 updateQuestion();
 
             }
